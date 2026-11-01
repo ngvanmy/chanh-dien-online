@@ -1,0 +1,26 @@
+services:
+  chanh-dien-live:
+    build:
+      context: ./live
+      dockerfile: Dockerfile
+
+    container_name: chanh-dien-live
+
+    restart: unless-stopped
+
+    environment:
+      NODE_ENV: production
+      HOST: 0.0.0.0
+      PORT: 5001
+      TZ: Asia/Ho_Chi_Minh
+
+    ports:
+      - "127.0.0.1:5001:5001"
+
+    init: true
+
+    security_opt:
+      - no-new-privileges:true
+
+    cap_drop:
+      - ALL
