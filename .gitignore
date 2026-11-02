@@ -1,5 +1,6 @@
 node_modules/
 live/tts/
+live/
 *.log
 .env
 .env.*
